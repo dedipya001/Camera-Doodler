@@ -34,7 +34,7 @@ The Hand Movement Tracking Web Application allows users to interact with their w
 To run the application locally, follow these steps:
 
 1. Clone the repository to your local machine:
-   git clone [https://github.com/your-username/hand-movement-tracking-webapp.git](https://github.com/Real-Partha/Camera-Doodler.git)
+   git clone [https://github.com/Real-Partha/Camera-Doodler.git](https://github.com/Real-Partha/Camera-Doodler.git)
 
 2. Navigate to the project directory:
   cd hand-movement-tracking-webapp
