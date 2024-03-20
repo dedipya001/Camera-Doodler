@@ -22,7 +22,7 @@ def main():
         home_page()
         if st.sidebar.button("Freestyle Mode"):
             subprocess.Popen(
-                ["streamlit", "run", "Freestyle.py"]
+                ["streamlit", "run", "freestyle.py"]
             )  # Execute the main4TRY.py script
     elif page == "About Team":
         from about_team import about_team

@@ -1,12 +1,11 @@
 import os
 import numpy as np
 import cv2
-from wolfram_calculator import compute_latex_expression
 
 from tensorflow.keras.models import load_model
 
 # Load the trained model
-model = load_model("new_model_whitebg.h5")
+model = load_model("models/new_model_whitebg.h5")
 
 
 def segment_and_predict(image_path="mask_capture.png"):

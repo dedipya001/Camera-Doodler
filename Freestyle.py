@@ -4,6 +4,11 @@ import mediapipe as mp
 import numpy as np
 import time
 import subprocess
+import os
+from datetime import datetime
+from fpdf import FPDF
+
+pdf = FPDF()
 
 
 def open_camera(camera_view_placeholder):
@@ -17,8 +22,10 @@ def open_camera(camera_view_placeholder):
 
     # screenshot the mask
     def save_mask_as_image(mask, file_format="png"):
-        filename = f"mask_capture.{file_format}"
-        cv2.imwrite(filename, mask, [int(cv2.IMWRITE_JPEG_QUALITY), 80])
+        os.makedirs("Freestyle", exist_ok=True)
+        current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        filename = f"Freestyle/mask_{current_time}.{file_format}"
+        cv2.imwrite(filename, mask)
 
     def get_tool(x):
         # determine tool to use
@@ -99,8 +106,25 @@ def open_camera(camera_view_placeholder):
                 elif curr_tool == "clear":
                     mask.fill(255)
                 elif curr_tool == "export":
+                    # take all images from Freestyle and make a pdf and save to folder Saved and delete all the images from the Freestyle Folder and make it clean
+                    os.makedirs("Saved", exist_ok=True)
+                    # get all the images from the Freestyle folder
+                    images = []
+                    for filename in os.listdir("Freestyle"):
+                        if filename.endswith(".png"):
+                            images.append(filename)
+                    # print(images)
+                    # make a pdf of all the images
 
-                    pass
+                    for image in images:
+                        pdf.add_page()
+                        pdf.image(f"Freestyle/{image}", 0, 0, 210, 297)
+                    current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+                    pdf.output(f"Saved/Freestyle_{current_time}.pdf")
+                    # delete all the images from the Freestyle folder
+                    for image in images:
+                        os.remove(f"Freestyle/{image}")
+                    curr_tool = "exported"
 
         op = cv2.bitwise_and(frm, frm, mask=mask)
         frm[:, :, 2] = op[:, :, 2]

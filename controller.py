@@ -8,7 +8,7 @@ from segment_predict import segment_and_predict
 from tensorflow.keras.models import load_model
 
 # Load the trained model
-model = load_model("new_model_whitebg.h5")
+model = load_model("models/new_model_whitebg.h5")
 
 
 # @st.cache(
