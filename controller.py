@@ -7,7 +7,7 @@ import streamlit as st
 from segment_predict import segment_and_predict
 from tensorflow.keras.models import load_model
 
-# Load the trained model
+
 model = load_model("models/new_model_whitebg.h5")
 
 
@@ -25,13 +25,13 @@ def open_camera(camera_view_placeholder):
     thick = 11
     prevx, prevy = 0, 0
 
-    # screenshot the mask
+    
     def save_mask_as_image(mask, file_format="png"):
         filename = f"mask_capture.{file_format}"
         cv2.imwrite(filename, mask, [int(cv2.IMWRITE_JPEG_QUALITY), 80])
 
     def get_tool(x):
-        # determine tool to use
+        
         if x < 50 + margin_left:
             return "draw"
         elif x < 100 + margin_left:
@@ -43,7 +43,7 @@ def open_camera(camera_view_placeholder):
         else:
             return "save"
 
-    # y corresponds to the landmarks of the middle finger's landmark
+    
     def middle_finger_raised(y12, y9):
         return (y9 - y12) > 40
 
@@ -79,7 +79,7 @@ def open_camera(camera_view_placeholder):
     # tools = tools.astype('uint8')
     if tools is None:
         st.error(f"Error: Unable to read image file '{tools_path}'")
-    # You can choose to use a default image or handle the error in another way
+    
     else:
         tools = tools.astype("uint8")
 

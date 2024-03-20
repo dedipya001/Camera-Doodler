@@ -102,6 +102,7 @@ def open_camera(camera_view_placeholder):
                         cv2.circle(mask, (x, y), 30, 255, -1)
                 elif curr_tool == "save":
                     save_mask_as_image(mask, "png")
+                    mask.fill(255)
                     curr_tool = "saved"
                 elif curr_tool == "clear":
                     mask.fill(255)
@@ -113,9 +114,8 @@ def open_camera(camera_view_placeholder):
                     for filename in os.listdir("Freestyle"):
                         if filename.endswith(".png"):
                             images.append(filename)
-                    # print(images)
-                    # make a pdf of all the images
 
+                    # make a pdf of all the images
                     for image in images:
                         pdf.add_page()
                         pdf.image(f"Freestyle/{image}", 0, 0, 210, 297)
@@ -161,18 +161,20 @@ def open_camera(camera_view_placeholder):
 def main():
     st.set_page_config(page_title="Freestyle")
     st.title("Freestyle Mode")
-    go_back_button = st.button("Go back")
+
+    st.sidebar.markdown(
+        '<div style="font-size:48px;"> Menu </div>', unsafe_allow_html=True
+    )
+    camera_view_placeholder = st.empty()
+    camera_button = st.sidebar.button("Open Camera")
+    stop_button_pressed = st.sidebar.button("Stop Camera")
+    go_back_button = st.sidebar.button("Go back")
 
     # Check if "Go back" button is clicked
     if go_back_button:
         # Redirect to the homepage using subprocess to run another Python script
-        subprocess.Popen(["streamlit", "run", "homepage.py"])
+        subprocess.Popen(["streamlit", "run", "main.py"])
         return
-    st.sidebar.markdown(
-        '<div style="font-size:48px;"> Buttons </div>', unsafe_allow_html=True
-    )
-    camera_view_placeholder = st.empty()
-    camera_button = st.sidebar.button("Open Camera")
 
     if camera_button:
         open_camera(camera_view_placeholder)

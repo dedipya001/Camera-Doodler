@@ -16,23 +16,24 @@ def main():
     page = st.sidebar.radio("Go to", ("Home", "About Team", "Instructions"))
 
     if page == "Home":
-        from homepage import home_page  # Place the transcript below the navigation bar
+        from homepage import home_page 
 
-        # Place the transcript below the navigation bar
+        
         home_page()
         if st.sidebar.button("Freestyle Mode"):
             subprocess.Popen(
                 ["streamlit", "run", "freestyle.py"]
-            )  # Execute the main4TRY.py script
+            ) 
     elif page == "About Team":
-        from about_team import about_team
+        from about_team import about_project, about_team
 
-        cs_sidebar()  # Place the transcript below the navigation bar
+        cs_sidebar()  
+        about_project()
         about_team()
     elif page == "Instructions":
         from instructions import instructions
 
-        cs_sidebar()  # Place the transcript below the navigation bar
+        cs_sidebar()  
         instructions()
 
 
