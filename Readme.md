@@ -34,7 +34,7 @@ The Hand Movement Tracking Web Application allows users to interact with their w
 To run the application locally, follow these steps:
 
 1. Clone the repository to your local machine:
-   git clone [https://github.com/your-username/hand-movement-tracking-webapp.git](https://github.com/Real-Partha/Camera-Doodler.git)
+   git clone [https://github.com/Real-Partha/Camera-Doodler.git](https://github.com/Real-Partha/Camera-Doodler.git)
 
 2. Navigate to the project directory:
   cd hand-movement-tracking-webapp
@@ -66,6 +66,6 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use and 
 
 ---
 
-*Created by <br>[Partha Pratim Paul](https://github.com/Real-Partha)<br>[Md Ehtesham Ansari](https://github.com/mdehteshamansari)<br>[Dedipya Goswami](https://github.com/dedipya001)<br>[Abhay Raj](https://github.com/abayraj-13)<br>[Joydeep Ghosh](https://github.com/Real-Partha)*
+*Created by <br>[Partha Pratim Paul](https://github.com/Real-Partha)<br>[Md Ehtesham Ansari](https://github.com/mdehteshamansari)<br>[Dedipya Goswami](https://github.com/dedipya001)<br>[Abhay Raj](https://github.com/abhayraj-13)<br>[Joydeep Ghosh](https://github.com/joydeep2003)*
 
 
