@@ -132,7 +132,7 @@ def open_camera(camera_view_placeholder):
         frm = cv2.cvtColor(frm, cv2.COLOR_BGR2RGB)
 
         # Overlaying white screen on top of camera feed
-        frm = cv2.addWeighted(white_screen, 0.9, frm, 0.3, 0)
+        frm = cv2.addWeighted(white_screen, 0.6, frm, 0.3, 0)
 
         # Displaying current tool
         cv2.putText(
