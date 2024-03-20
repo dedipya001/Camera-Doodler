@@ -26,6 +26,9 @@ The Hand Movement Tracking Web Application allows users to interact with their w
 - **MediaPipe**: MediaPipe provides hand-tracking functionality, allowing the application to accurately track hand movements.
 - **Wolfram Alpha**: Wolfram Alpha's computational engine is used to perform mathematical calculations based on user input.
 
+## Security
+- **Streamlit-webrtc**: Used to create a pop-up to grant permission to use Webcamera.
+
 ## Installation
 
 To run the application locally, follow these steps:
@@ -38,7 +41,7 @@ To run the application locally, follow these steps:
 3. Install the required dependencies using pip:
   pip install -r requirements.txt
 4. Run the Streamlit application:
-  streamlit run app.py
+  streamlit run main.py
 5. Open your web browser and go to [http://localhost:8501](http://localhost:8501) to access the application.
 
 ## Usage
