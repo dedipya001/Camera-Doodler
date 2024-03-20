@@ -66,6 +66,6 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use and 
 
 ---
 
-*Created by <br>[Partha Pratim Paul](https://github.com/Real-Partha)<br>[Md Ehtesham Ansari](https://github.com/mdehteshamansari)<br>[Dedipya Goswami](https://github.com/dedipya001)<br>[Abhay Raj](https://github.com/abayraj-13)<br>[Joydeep Ghosh](https://github.com/Real-Partha)*
+*Created by <br>[Partha Pratim Paul](https://github.com/Real-Partha)<br>[Md Ehtesham Ansari](https://github.com/mdehteshamansari)<br>[Dedipya Goswami](https://github.com/dedipya001)<br>[Abhay Raj](https://github.com/abhayraj-13)<br>[Joydeep Ghosh](https://github.com/joydeep2003)*
 
 
