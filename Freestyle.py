@@ -166,8 +166,15 @@ def main():
         '<div style="font-size:48px;"> Menu </div>', unsafe_allow_html=True
     )
     camera_view_placeholder = st.empty()
+    access_granted = st.checkbox("Allow camera access", value=False)
     camera_button = st.sidebar.button("Open Camera")
     stop_button_pressed = st.sidebar.button("Stop Camera")
+    
+    if camera_button:
+        if access_granted:
+            open_camera(camera_view_placeholder)  
+        else:
+            st.warning("Camera access denied.")
     go_back_button = st.sidebar.button("Go back")
 
     # Check if "Go back" button is clicked
@@ -175,9 +182,6 @@ def main():
         # Redirect to the homepage using subprocess to run another Python script
         subprocess.Popen(["streamlit", "run", "main.py"])
         return
-
-    if camera_button:
-        open_camera(camera_view_placeholder)
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ from segment_predict import segment_and_predict
 from tensorflow.keras.models import load_model
 
 
-model = load_model("models/new_model_whitebg.h5")
+model = load_model("models/new_model_A_Z.h5")
 
 
 # @st.cache(
@@ -25,13 +25,12 @@ def open_camera(camera_view_placeholder):
     thick = 11
     prevx, prevy = 0, 0
 
-    
     def save_mask_as_image(mask, file_format="png"):
         filename = f"mask_capture.{file_format}"
         cv2.imwrite(filename, mask, [int(cv2.IMWRITE_JPEG_QUALITY), 80])
 
     def get_tool(x):
-        
+
         if x < 50 + margin_left:
             return "draw"
         elif x < 100 + margin_left:
@@ -43,7 +42,6 @@ def open_camera(camera_view_placeholder):
         else:
             return "save"
 
-    
     def middle_finger_raised(y12, y9):
         return (y9 - y12) > 40
 
@@ -63,7 +61,34 @@ def open_camera(camera_view_placeholder):
             "11": "-",
             "12": "*",
             "13": "/",
+            "14": "A",
+            "15": "B",
+            "16": "C",
+            "17": "D",
+            "18": "E",
+            "19": "F",
+            "20": "G",
+            "21": "H",
+            "22": "I",
+            "23": "J",
+            "24": "K",
+            "25": "L",
+            "26": "M",
+            "27": "N",
+            "28": "O",
+            "29": "P",
+            "30": "Q",
+            "31": "R",
+            "32": "S",
+            "33": "T",
+            "34": "U",
+            "35": "V",
+            "36": "W",
+            "37": "X",
+            "38": "Y",
+            "39": "Z",
         }
+
         output = ""
         for key in list_numbers:
             output += int_to_str[str(key)]
@@ -79,7 +104,7 @@ def open_camera(camera_view_placeholder):
     # tools = tools.astype('uint8')
     if tools is None:
         st.error(f"Error: Unable to read image file '{tools_path}'")
-    
+
     else:
         tools = tools.astype("uint8")
 

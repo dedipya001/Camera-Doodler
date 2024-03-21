@@ -80,11 +80,20 @@ def cs_body():
     st.markdown('<div style="font-size: 16px; color: #ffffff; padding-top: 20px;">Click the button below to start unleashing your creativity:</div>', unsafe_allow_html=True)
     
     camera_view_placeholder = st.empty()  
-    open_camera_button = st.button("📷 Open camera", type="primary", key="open_camera_button", )
+
+    # Default state: access not granted
+    access_granted = st.checkbox("Allow camera access", value=False)
+
+    open_camera_button = st.button("Open camera", type="primary")
     stop_button_pressed = st.button("Stop")
 
     if open_camera_button:
-        open_camera(camera_view_placeholder)  
+        if access_granted:
+            open_camera(camera_view_placeholder)  
+        else:
+            st.warning("Camera access denied.")
+
+    st.markdown("Made by Team Automatrix - HackSRM 2024") 
 
     st.markdown('<p style="font-size: 16px; color: #ffffff; padding-top: 50px;">Made by Team Automatrix - HackSRM 2024</p>', unsafe_allow_html=True)
 
