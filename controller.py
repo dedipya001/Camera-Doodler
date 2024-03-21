@@ -161,6 +161,7 @@ def open_camera(camera_view_placeholder):
                         cv2.circle(mask, (x, y), 30, 255, -1)
                 elif curr_tool == "solve":
                     save_mask_as_image(mask, "png")
+                    # list_numbers = segment_and_predict()
                     list_numbers = segment_and_predict()
                     output = display_numbers(list_numbers)
                     answer = compute_latex_expression(output, "QY6LX3-5UPVEGR9Y9")
@@ -168,6 +169,7 @@ def open_camera(camera_view_placeholder):
                     curr_tool = "solved"
                 elif curr_tool == "save":
                     save_mask_as_image(mask, "png")
+                    # list_numbers = segment_and_predict()
                     list_numbers = segment_and_predict()
                     output = display_numbers(list_numbers)
                     st.sidebar.latex(output)
