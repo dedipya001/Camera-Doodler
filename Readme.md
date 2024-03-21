@@ -27,7 +27,7 @@ The Hand Movement Tracking Web Application allows users to interact with their w
 - **Wolfram Alpha**: Wolfram Alpha's computational engine is used to perform mathematical calculations based on user input.
 
 ## Security
-- **Streamlit-webrtc**: Used to create a pop-up to grant permission to use Webcamera.
+-Implemented the functionality of Asking user permisssion for turning on the camera for controlled security.
 
 ## Installation
 
