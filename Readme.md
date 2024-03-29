@@ -1,6 +1,6 @@
 # Camera-Doodler
 
-This is a web application built using Streamlit, OpenCV, and MediaPipe to track hand movement and draw on the screen in real time.
+This is a web application built using Streamlit, OpenCV, and MediaPipe to track hand movement and draw on the screen in real time. [Click to see Demo](https://devfolio.co/projects/camera-doodler-bca4).
 
 
 ## Overview
